@@ -41,6 +41,9 @@ commApp.controller('imgController', function ($scope, $state, $http, $filter, $t
 
                 if(dataURL){
                     console.log(dataURL);
+
+                    $('#view').css('background', 'url(' + dataURL + ')').css('background-size', 'cover');
+
                     //mui.showLoading('正在加载..', 'div');
 
                     var blobs = $scope.toBlob(dataURL);
@@ -100,8 +103,8 @@ commApp.controller('imgController', function ($scope, $state, $http, $filter, $t
     };
 
     $scope.go = function () {
-        return false;
-        window.location.href = 'personalEdit.html?account=' + $scope.account + '&openId=' + $scope.openId;
+        window.location.reload();
+        //window.location.href = 'personalEdit.html?account=' + $scope.account + '&openId=' + $scope.openId;
     };
 
     /*******************************************************方法-end***********************************************************/
